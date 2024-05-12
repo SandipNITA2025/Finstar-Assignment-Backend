@@ -6,7 +6,7 @@ import authMiddleware from "../middleware/auth.middleware.js";
 const router = express.Router();
 
 // middleware:
-router.use(authMiddleware);
+// router.use(authMiddleware);
 
 router.get("/get/:userId", TodoController.index);
 router.post("/add", TodoController.store);

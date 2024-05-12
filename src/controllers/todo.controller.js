@@ -18,7 +18,8 @@ class TodoController {
       const todos = await Todo.find({ userId: user._id })
         .populate("userId", "name email")
         .sort({ createdAt: -1 });
-      res.status(200).json(todos);
+      const totalCompletedTasks = todos.filter((todo) => todo.completed).length;
+      res.status(200).json({ todos, totalCompletedTasks });
     } catch (error) {
       console.log("Failed to fetch todos:", error);
       res

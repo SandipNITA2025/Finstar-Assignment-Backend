@@ -69,9 +69,13 @@ class AuthController {
         return res.status(401).json({ message: "Invalid email or password" });
       }
 
-      const token = jwt.sign({ userId: user._id }, env.jwtSecret, {
-        expiresIn: "1d",
-      });
+      const token = jwt.sign(
+        { userId: user._id, userName: user.name },
+        env.jwtSecret,
+        {
+          expiresIn: "1d",
+        }
+      );
 
       res.cookie("token", token, {
         maxAge: 24 * 60 * 60 * 1000,
