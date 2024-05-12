@@ -8,12 +8,9 @@
     }
   ],
   "routes": [
-    { "src": "/src/(.*)", "dest": "/src/$1" },
-    { "src": "/config/(.*)", "dest": "/config/$1" },
-    { "src": "/controllers/(.*)", "dest": "/controllers/$1" },
-    { "src": "/db/(.*)", "dest": "/db/$1" },
-    { "src": "/middleware/(.*)", "dest": "/middleware/$1" },
-    { "src": "/models/(.*)", "dest": "/models/$1" },
-    { "src": "/(.*)", "dest": "/index.js" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
   ]
 }
